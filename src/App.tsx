@@ -37,6 +37,11 @@ export default function App() {
       return;
     }
 
+    if (trimmedTitle.length > 60) {
+      showMessage("Book title must be 60 characters or fewer.", "error");
+      return;
+    }
+
     if (isDuplicate(books, trimmedTitle)) {
       showMessage("This book is already in your reading list.", "error");
       return;
